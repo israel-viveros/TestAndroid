@@ -1,24 +1,34 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-	<title>logotipo-cq</title>
-<!--Adobe Edge Runtime-->
-    <script type="text/javascript" charset="utf-8" src="logotipo-resize_edgePreload.js"></script>
-    <style>
-        .edgeLoad-logotipo-cq { visibility:hidden; }
-    </style>
-<!--Adobe Edge Runtime End-->
+	<title></title>
+	<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+	<style type="text/css">
+	html{background: black}
+		.pintame{
+			position: relative;
+			width: 200px;
+			left: 100px;
+			color: white
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".animate").bind("click",function(){
+				$(".pintame").html("Reseteado");	
+				$(".pintame").animate({"left":"50%","top":"30%","color":"yellow","font-size":"54px"});
+			});
 
-	<script type="text/javascript" src="edge_includes/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="edge_includes/edge.1.5.0.min.js"></script>
-	<script type="text/javascript" src="logotipo-resize_edge.js"></script>
-	<script type="text/javascript" src="logotipo-resize_edgeActions.js"></script>
-
+			$(".reset").bind("click",function(){
+				$(".pintame").html("Animado");	
+				$(".pintame").animate({"left":"0px","top":"0px"});
+			});
+		});
+		
+	</script>
 </head>
-<body style="margin:0;padding:0;">
-	<div id="Stage" class="logotipo-cq">
-	</div>
+<body>
+	<div class="pintame"></div>
+	<button class="reset">Reset</button>
+	<button class="animate">Animate</button>
 </body>
 </html>
