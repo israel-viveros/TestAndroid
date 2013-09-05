@@ -3,6 +3,11 @@
 	<title></title>
 	<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
 	<style type="text/css">
+	p{
+		color: white;
+		font-size: 20px;
+		position: relative;
+	}
 	html{background: black}
 		.pintame{
 			position: relative;
@@ -13,6 +18,9 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$(".calcular").bind("click",function(){
+				$("p").html("alto:" +$(document).height() + "Ancho" + $(document).width());				
+			});
 			$(".animate").bind("click",function(){
 				$(".pintame").html("Reseteado");	
 				$(".pintame").animate({"left":"50%","top":"30%","color":"yellow","font-size":"54px"});
@@ -30,5 +38,8 @@
 	<div class="pintame"></div>
 	<button class="reset">Reset</button>
 	<button class="animate">Animate</button>
+	<button class="calcular">calcula</button>
+
+	<p></p>
 </body>
 </html>
